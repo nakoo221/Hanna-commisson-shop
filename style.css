@@ -1,0 +1,456 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Clean, modern body font */
+    line-height: 1.6;
+    color: #ccb2b2; /* Dark, professional text color */
+    background-color: #f8f8f8; /* Light background for contrast */
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Elegant, classic heading font */
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: #4a4a4a;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #7a7a7a;
+}
+
+/* --- Buttons --- */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.primary-btn {
+    background-color: #5d5d5d; /* Muted primary color */
+    color: #fff;
+}
+
+.primary-btn:hover {
+    background-color: #3a3a3a;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background-color: #fff;
+    color: #5d5d5d;
+    border: 2px solid #5d5d5d;
+}
+
+.secondary-btn:hover {
+    background-color: #5d5d5d;
+    color: #fff;
+}
+
+.buy-now-btn {
+    width: 100%;
+    background-color: #421f1f; /* Gold/Bronze accent for premium feel */
+    color: #d39a9a;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.buy-now-btn:hover {
+    background-color: #9a7e58;
+}
+
+/* --- Header and Navigation --- */
+header {
+    background-color: #783b3b;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #333;
+}
+
+.desktop-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.desktop-nav li {
+    margin-left: 30px;
+}
+
+.desktop-nav a {
+    font-weight: 400;
+    padding: 5px 0;
+    position: relative;
+}
+
+.desktop-nav a:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #b0916a;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.desktop-nav a:hover:after {
+    width: 100%;
+}
+
+.mobile-menu-icon {
+    display: none; /* Hidden on desktop */
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #916363;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.mobile-nav.open {
+    display: block;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.mobile-nav li {
+    padding: 10px 0;
+    border-bottom: 1px solid #9b4242;
+}
+
+.mobile-nav a {
+    display: block;
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 5%;
+    background: #ab7e7e;
+}
+
+.hero-content {
+    max-width: 500px;
+    z-index: 10;
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #9e8989;
+}
+
+.hero-image-placeholder img {
+    max-height: 80vh;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* --- General Sections --- */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- Services Section --- */
+.service-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: #d9b3b3;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border-top: 4px solid #b0916a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    font-size: 2.5em;
+    color: #ad7474;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card-price {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #5d5d5d;
+    margin-top: 15px;
+}
+
+/* --- Gallery Section --- */
+.gallery-section {
+    background-color: #a38080;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item:hover img {
+    opacity: 0.8;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    background-color: #1a1a1a;
+    color: #673f3f;
+    padding: 60px 0;
+}
+
+.contact-section h2 {
+    color: #fff;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #0d0d0d;
+    color: #ccc;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links a {
+    color: #ccc;
+    margin-left: 15px;
+    font-size: 1.2em;
+}
+
+.social-links a:hover {
+    color: #b0916a;
+}
+
+
+/* ======================================================= */
+/* --- Animations (Keyframes) --- */
+/* ======================================================= */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-pop-in {
+    opacity: 0;
+    animation: popIn 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+    opacity: 0;
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-slow {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* Animation Delays for Staggered Effect */
+.delay-1s { animation-delay: 1s; }
+.delay-2s { animation-delay: 2s; }
+
+/* Applying staggered delays to service cards (using child selectors) */
+.service-cards-grid .service-card:nth-child(1) { animation-delay: 0.2s; }
+.service-cards-grid .service-card:nth-child(2) { animation-delay: 0.4s; }
+.service-cards-grid .service-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Applying staggered delays to gallery items */
+.gallery-grid .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+.gallery-grid .gallery-item:nth-child(2) { animation-delay: 0.4s; }
+.gallery-grid .gallery-item:nth-child(3) { animation-delay: 0.7s; }
+
+
+/* ======================================================= */
+/* --- Responsive Design (Mobile First adjustments) --- */
+/* ======================================================= */
+
+@media (max-width: 768px) {
+    /* Adjust Hero Section for mobile */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        order: 2; /* Move content below image on mobile */
+    }
+
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-image-placeholder {
+        margin-bottom: 30px;
+        order: 1; /* Move image above content on mobile */
+    }
+    
+    .hero-image-placeholder img {
+        max-height: 60vh;
+        width: 90%;
+    }
+
+    /* Adjust Navigation for mobile */
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    /* Adjust Sections */
+    section {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    /* Adjust Footer */
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer p {
+        margin-bottom: 10px;
+    }
+
+    .social-links {
+        margin-top: 10px;
+    }
+
+    .social-links a {
+        margin: 0 10px;
+    }
+}
